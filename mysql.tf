@@ -9,7 +9,7 @@ resource "aws_security_group" "rds_sg" {
     from_port       = 3306
     to_port         = 3306
     protocol        = "tcp"
-    security_groups = ["sg-0431a6ed03d44e2ae", "sg-0c08bb81832477d7d"]  # Adicionar novo grupo de segurança
+    security_groups = ["sg-0431a6ed03d44e2ae", "sg-0f94a3d5df14a4106"]  # Adicionar novo grupo de segurança
   }
 
   # Permitir saída para qualquer destino
