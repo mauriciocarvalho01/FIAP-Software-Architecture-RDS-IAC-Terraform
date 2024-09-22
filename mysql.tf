@@ -2,14 +2,14 @@
 resource "aws_security_group" "rds_sg" {
   name        = "rds-mysql-sg"
   description = "Security group for MySQL RDS"
-  vpc_id      = "vpc-072de84496ad21076"  # ID da sua VPC
+  vpc_id      = "vpc-01a8980d5788dd500"  # ID da sua VPC
 
   # Permitir tráfego do grupo de segurança do EKS na porta MySQL (3306)
   ingress {
     from_port       = 3306
     to_port         = 3306
     protocol        = "tcp"
-    security_groups = ["sg-0431a6ed03d44e2ae", "sg-0f94a3d5df14a4106"]  # Adicionar novo grupo de segurança
+    security_groups = ["sg-0a9562235d12dfcf3", "sg-0520d225f62dc2bc1"]  # Adicionar novo grupo de segurança
   }
 
   # Permitir saída para qualquer destino
@@ -25,7 +25,7 @@ resource "aws_security_group" "rds_sg" {
 data "aws_subnets" "default" {
   filter {
     name   = "vpc-id"
-    values = ["vpc-072de84496ad21076"]  # ID da sua VPC
+    values = ["vpc-01a8980d5788dd500"]  # ID da sua VPC
   }
 }
 
